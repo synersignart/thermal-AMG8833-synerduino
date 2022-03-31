@@ -1,0 +1,4 @@
+COM3
+SynerFlight
+BAUD 115200
+www.Synerflight.com
