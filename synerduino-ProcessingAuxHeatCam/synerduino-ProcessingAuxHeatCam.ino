@@ -1,6 +1,7 @@
 /*
+Synerduino Fork of Nik Poole GridEye
+
   Visualizing the Panasonic Grid-EYE Sensor Data using Processing
-  By: Nick Poole
   SparkFun Electronics
   Date: January 12th, 2018
   
