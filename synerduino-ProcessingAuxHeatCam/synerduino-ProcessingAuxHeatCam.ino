@@ -1,7 +1,6 @@
 /*
-Synerduino Fork of Nik Poole GridEye
-
   Visualizing the Panasonic Grid-EYE Sensor Data using Processing
+ Synerflight Forked version of  Nick Poole Grideye
   SparkFun Electronics
   Date: January 12th, 2018
   
@@ -30,14 +29,21 @@ Synerduino Fork of Nik Poole GridEye
   https://processing.org/
   
   Hardware Connections:
-  Attach the Qwiic Shield to your Arduino/Photon/ESP32 or other
-  Plug the sensor onto the shield
+  Attach the Sensor to the Arduino accordingly
 
  SDA - A4
  SCL - A5
  D9 - PWM out to Flight controler
- Serial0 - to Telemetry
-
+ Serial0 - to Telemetry (bluetooth)
+ TX-Rx
+ Rx-Tx
+ Vcc-Vin
+ Gnd-Gnd
+ 
+  Attach the Arduino D9 to Synerduino shield A15
+  D9 - A15
+  Vcc - (+)
+  Gnd - (-)
   
 */
 #include <Servo.h>
@@ -53,7 +59,7 @@ void setup() {
   Wire.begin();
   // Library assumes "Wire" for I2C but you can pass something else with begin() if you like
   grideye.begin();
-  // Pour a bowl of serial
+  // Pour a bowl of serial // baud rate must be similar on Arduino, Telemetry ,Processing software
  Serial.begin(115200); 
  //Serial.begin(57600);
  //Serial.begin(38400);
@@ -79,7 +85,7 @@ void loop() {
         hotPixelValue = testPixelValue;
         hotPixelIndex = i;
       }
-   servo_pin_9.write( ( hotPixelValue + 10 ) );// change tuning (hotPixelValue + "VALUE#") this to adjust the pwm out put to the Aux 
+   servo_pin_9.write( ( hotPixelValue + 43 ) );// change tuning (hotPixelValue + "VALUE#") this to adjust the pwm out put to the Aux //Ex: 20c Degrees = 1200ms PWM  
   } 
 
   // End each frame with a linefeed
@@ -92,4 +98,3 @@ void loop() {
   
 
 }
-
