@@ -1,0 +1,3 @@
+COM4
+SynerFlight
+BAUD 115200
