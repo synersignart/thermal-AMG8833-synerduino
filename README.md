@@ -17,3 +17,5 @@ image processing aglorithms,
 VLCJ Video,
 video library for processing 3 or 4,
 
+TOOLS > Add Tools > Video library for Processing GStreamer Base Video Library
+
